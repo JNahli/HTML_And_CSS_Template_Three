@@ -23,6 +23,46 @@ ul {
   margin: 0;
   padding: 0;
 }
+.main-title {
+  padding: 10px 20px;
+  border: 2px solid black;
+  width: fit-content;
+  margin: 100px auto;
+  position: relative;
+  z-index: 1;
+  transition: var(--main-transition-duration);
+}
+.main-title::before,
+.main-title::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: var(--main-color);
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.main-title::before {
+  left: -30px;
+}
+.main-title::after {
+  right: -30px;
+}
+.main-title:hover::before {
+  z-index: -1;
+  animation: left-move 0.5s linear forwards;
+}
+.main-title:hover::after {
+  z-index: -1;
+  animation: right-move 0.5s linear forwards;
+}
+.main-title:hover {
+  background-color: var(--main-color);
+  border: 2px solid white;
+  color: white;
+  transition-delay: 0.5s;
+}
 /* End Global Rules */
 /* Start Media for container */
 .container {
@@ -142,7 +182,8 @@ ul {
   gap: 40px;
   top: calc(100% - 50px);
   opacity: 0;
-  transition: top var(--main-transition-duration), opacity var(--main-transition-duration);
+  transition: top var(--main-transition-duration),
+    opacity var(--main-transition-duration);
 }
 @media (max-width: 767px) {
   .header .mega-menu {
@@ -181,7 +222,7 @@ ul {
   left: 0;
   width: 0px;
   height: 100%;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   z-index: -1;
   transition: var(--main-transition-duration);
 }
@@ -298,11 +339,43 @@ ul {
   }
 }
 @keyframes bouncing {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
-  40%, 60% {
+  40%,
+  60% {
     transform: translateY(-15px);
   }
 }
+@keyframes left-move {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+@keyframes right-move {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+
 /* * End Animation */
