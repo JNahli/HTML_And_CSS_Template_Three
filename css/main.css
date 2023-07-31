@@ -3,11 +3,16 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-animation: both;
+  -moz-animation: both;
+  animation: both;
 }
 :root {
   --main-color: #2196f3;
   --main-color-alt: #4164f0;
   --main-transition-duration: 0.4s;
+  --main-section-padding-top: 100px;
+  --main-section-padding-bottom: 100px;
 }
 html {
   scroll-behavior: smooth;
@@ -27,7 +32,8 @@ ul {
   padding: 10px 20px;
   border: 2px solid black;
   width: fit-content;
-  margin: 100px auto;
+  margin: 0 auto 80px;
+  font-size: 30px;
   position: relative;
   z-index: 1;
   transition: var(--main-transition-duration);
@@ -61,7 +67,7 @@ ul {
   background-color: var(--main-color);
   border: 2px solid white;
   color: white;
-  transition-delay: 0.5s;
+  transition-delay: 0.4s;
 }
 /* End Global Rules */
 /* Start Media for container */
@@ -328,6 +334,65 @@ ul {
   animation: bouncing 1.5s infinite;
 }
 /* End Landing */
+/* Start Articales */
+.articales {
+  padding-top: var(--main-section-padding-top);
+  padding-bottom: var(--main-section-padding-bottom);
+  position: relative;
+}
+.articales .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+.articales .box {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 10%);
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform var(--main-transition-duration),
+    box-shadow var(--main-transition-duration);
+}
+.articales .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 25%);
+}
+.articales .box img {
+  width: 100%;
+  max-width: 100%;
+}
+.articales .box .content {
+  padding: 20px;
+}
+.articales .box .content h3 {
+  margin: 0;
+}
+.articales .box .content p {
+  margin: 10px 0 0;
+  line-height: 1.5;
+  color: #777;
+}
+.articales .box .info {
+  padding: 20px;
+  border-top: 2px solid #e6e6e7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.articales .box .info a {
+  color: var(--main-color);
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  font-size: 18px;
+}
+.articales .box .info i {
+  color: var(--main-color);
+}
+.articales .box:hover .info i {
+  animation: moving-arrow 0.6s linear infinite;
+}
+/* End Articales */
+
 /* * Start Animation */
 @keyframes up-and-down {
   0%,
@@ -375,6 +440,11 @@ ul {
     border-radius: 0;
     width: 50%;
     height: 100%;
+  }
+}
+@keyframes moving-arrow {
+  50% {
+    transform: translateX(7px);
   }
 }
 
