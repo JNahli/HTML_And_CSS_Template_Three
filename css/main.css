@@ -188,7 +188,7 @@ ul {
   z-index: -1;
   display: flex;
   gap: 40px;
-  top: calc(100% - 50px);
+  top: calc(100% + 50px);
   opacity: 0;
   transition: top var(--main-transition-duration),
     opacity var(--main-transition-duration);
