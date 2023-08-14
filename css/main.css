@@ -1321,6 +1321,12 @@ ul {
     padding: 0;
   }
 }
+.videos .preview .info span i {
+  transition: var(--main-transition-duration);
+}
+.videos .preview .info span i:hover {
+  transform: translateY(-3px);
+}
 /* End Top Videos */
 /* * Start Animation */
 @keyframes up-and-down {
