@@ -79,6 +79,7 @@ ul {
   color: white;
   transition-delay: 0.4s;
 }
+/*? Start Spikes Between Sections */
 .spikes {
   position: relative;
 }
@@ -94,6 +95,7 @@ ul {
     linear-gradient(225deg, #fff 25%, transparent 25%);
   background-size: 30px 30px;
 }
+/*? End Spikes Between Sections */
 /* End Global Rules */
 /* Start Media for container */
 .container {
