@@ -96,6 +96,23 @@ ul {
   background-size: 30px 30px;
 }
 /*? End Spikes Between Sections */
+/*? Start Dots In Sections*/
+.dots {
+  background-image: url("../imgs/dots.png");
+  width: 186px;
+  height: 204px;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+.dots-up {
+  top: 200px;
+  right: 50px;
+}
+.dots-down {
+  bottom: 200px;
+  left: 50px;
+}
+/*? Start Dots In Sections*/
 /* End Global Rules */
 /* Start Media for container */
 .container {
@@ -1542,6 +1559,7 @@ ul {
 .footer {
   background-color: #191919;
   padding: 70px 0 0;
+  position: relative;
 }
 @media (max-width: 767px) {
   .footer {
@@ -1657,6 +1675,14 @@ ul {
   text-align: center;
   margin: 50px 0 0;
   border-top: 1px solid #444;
+}
+.go-up {
+  position: absolute;
+  display: block;
+  right: 30px;
+  bottom: 80px;
+  color: var(--main-color);
+  animation: bouncing 2s linear infinite;
 }
 /* End Footer */
 
